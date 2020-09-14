@@ -5,7 +5,7 @@ import sys, traceback
 # Initial imports, reference cogs like cog.file
 # If we have commands.py with some cog CommandsCog, we reference it as:
 # cogs.commands
-cogs = ['cogs.public', 'cogs.load_cog', 'cogs.owner']
+cogs = ['cogs.public', 'cogs.load', 'cogs.owner']
 
 def get_prefix(bot, message):
     """A callable Prefix for our bot. This could be edited to allow per server prefixes."""
