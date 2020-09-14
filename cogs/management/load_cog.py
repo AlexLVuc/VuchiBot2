@@ -3,8 +3,9 @@ from discord.ext import commands
 
 class LoadCog(commands.Cog):
     """
-    A series of commands only for the owner of the bot. Temporarily limited to
-    the 'owner' of the bot, but will eventually be used by administrators.
+    A series of commands only for the owner of the bot.
+
+    TODO: Make this cog an administrator - only type cog
     """
     def __init__(self, bot):
         self.bot = bot
