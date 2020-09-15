@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 import sys, traceback
+import os
+from pathlib import Path
 
 # Initial imports, reference cogs like cog.file
 # If we have commands.py with some cog CommandsCog, we reference it as:
@@ -8,6 +10,7 @@ import sys, traceback
 cogs = [
         'cogs.user_specific.public',
         'cogs.management.load',
+        'cogs.management.events',
         'cogs.user_specific.owner'
        ]
 
