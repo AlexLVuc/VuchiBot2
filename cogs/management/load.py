@@ -14,7 +14,7 @@ class LoadCog(commands.Cog):
     # https://gist.github.com/EvieePy/d78c061a4798ae81be9825468fe146be
     @commands.command(name='load', hidden=True)
     @commands.is_owner()
-    async def cog_load(self, ctx, *, cog: str):
+    async def load_cog(self, ctx, *, cog: str):
         """Command which Loads a Module.
         Remember to use dot path. e.g: cogs.owner"""
 
@@ -27,7 +27,7 @@ class LoadCog(commands.Cog):
 
     @commands.command(name='unload', hidden=True)
     @commands.is_owner()
-    async def cog_unload(self, ctx, *, cog: str):
+    async def unload_cog(self, ctx, *, cog: str):
         """Command which Unloads a Module.
         Remember to use dot path. e.g: cogs.owner"""
 
@@ -40,7 +40,7 @@ class LoadCog(commands.Cog):
 
     @commands.command(name='reload', hidden=True)
     @commands.is_owner()
-    async def cog_reload(self, ctx, *, cog: str):
+    async def reload_cog(self, ctx, *, cog: str):
         """Command which Reloads a Module.
         Remember to use dot path. e.g: cogs.owner"""
 

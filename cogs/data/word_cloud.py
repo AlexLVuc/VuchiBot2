@@ -14,21 +14,19 @@ class WordCloudCog(commands.Cog):
     async def simpleWordCloud(self, ctx, *, arg: str):
         """
         Send a simple wordcloud of a user's messages in a channel.
-
-        TODO: Actually test this because I got tired
         """
         user_text = ""
         d = path.dirname(__file__) if "__file__" in locals() else os.getcwd()
 
         async for message in ctx.channel.history(limit=100000):
             if int(arg) == message.author.id:
-                user_text += message.content + "\n"
+                user_text += message.content + " "
 
         wordcloud = WordCloud().generate(user_text)
         wordcloud.to_file(path.join(d, f'{arg}.png'))
-        with open(path.join(d, f'{arg}.png'), 'rb') as f:
-            picture = discord.File(f)
-            await ctx.channel.send(ctx.channel, picture)
+        filename = path.join(d, f'{arg}.png')
+        with open(filename, 'rb') as f:
+            await ctx.channel.send(file=discord.File(f, filename))
 
 def setup(bot):
     bot.add_cog(WordCloudCog(bot))
